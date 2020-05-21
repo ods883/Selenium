@@ -32,9 +32,8 @@ public class RegistrodeusuarioCasosincorrectosTest {
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-		System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.26.0-win64/geckodriver.exe");
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_win32/chromedriver.exe");
-
+	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
 	  ChromeOptions chromeOptions = new ChromeOptions();
 	  chromeOptions.setHeadless(true);
 
