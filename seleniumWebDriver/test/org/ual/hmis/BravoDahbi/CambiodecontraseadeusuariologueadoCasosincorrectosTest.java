@@ -87,13 +87,13 @@ public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
     }
     driver.findElement(By.id("header-account-menu-link")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(4000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.linkText("Settings")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

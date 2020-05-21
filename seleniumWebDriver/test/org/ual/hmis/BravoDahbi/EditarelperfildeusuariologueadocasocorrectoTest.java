@@ -77,13 +77,13 @@ public class EditarelperfildeusuariologueadocasocorrectoTest {
       }
     driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys(Keys.ENTER);
     try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.id("header-account-menu-link")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(4000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

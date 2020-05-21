@@ -76,19 +76,19 @@ public class EditarelperfildeusuariologueadocasosincorrectosTest {
       }
     driver.findElement(By.cssSelector(".ajax-button")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(400);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.id("header-account-menu-link")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.linkText("Settings")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
