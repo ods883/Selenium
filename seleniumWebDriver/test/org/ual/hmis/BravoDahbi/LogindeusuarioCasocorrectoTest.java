@@ -10,6 +10,7 @@ import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -32,12 +33,18 @@ public class LogindeusuarioCasocorrectoTest {
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-	  System.setProperty("webdriver.chrome.driver", "selenium-drivers/chromedriver.exe");
-	  System.setProperty("webdriver.gecko.driver", "selenium-drivers/geckodriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+	  
 	  ChromeOptions chromeOptions = new ChromeOptions();
 	  chromeOptions.setHeadless(true);
-
 	  driver = new ChromeDriver(chromeOptions);
+	  	
+	  FirefoxOptions firefoxOptions = new FirefoxOptions();
+	  firefoxOptions.setHeadless(true);
+	  driver = new FirefoxDriver(firefoxOptions);
+	  
+	
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
