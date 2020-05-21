@@ -33,6 +33,8 @@ public class CambiodecontraseadeusuariologueadoCasocorrectoTest {
   @Before
   public void setUp() throws Exception {
 	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_win32/chromedriver.exe");
+	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver-v0.26.0-win64/geckodriver.exe");
+
 	  ChromeOptions chromeOptions = new ChromeOptions();
 	  chromeOptions.setHeadless(true);
 
@@ -115,7 +117,7 @@ public class CambiodecontraseadeusuariologueadoCasocorrectoTest {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
       try {
-          Thread.sleep(10000);
+          Thread.sleep(1000);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
