@@ -33,12 +33,13 @@ public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-	  
-	  ChromeOptions chromeOptions = new ChromeOptions();
-	  chromeOptions.setHeadless(true);
-	  driver = new ChromeDriver(chromeOptions);
+//	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+//	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+//	  
+//	  ChromeOptions chromeOptions = new ChromeOptions();
+//	  chromeOptions.setHeadless(true);
+//	  driver = new ChromeDriver(chromeOptions);
+
 	  	
 	  FirefoxOptions firefoxOptions = new FirefoxOptions();
 	  firefoxOptions.setHeadless(true);
@@ -58,7 +59,7 @@ public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
     driver.manage().window().setSize(new Dimension(1382, 744));
     driver.findElement(By.linkText("Log in")).click();
     try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
@@ -80,20 +81,15 @@ public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
       try {
-          Thread.sleep(1000);
+          Thread.sleep(2000);
         } catch (InterruptedException e) {
           e.printStackTrace();
         }
     }
     driver.findElement(By.id("header-account-menu-link")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Settings")).click();
     try {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

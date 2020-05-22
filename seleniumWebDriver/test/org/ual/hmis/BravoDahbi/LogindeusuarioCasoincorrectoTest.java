@@ -33,12 +33,13 @@ public class LogindeusuarioCasoincorrectoTest {
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-	  
-	  ChromeOptions chromeOptions = new ChromeOptions();
-	  chromeOptions.setHeadless(true);
-	  driver = new ChromeDriver(chromeOptions);
+//	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+//	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+//	  
+//	  ChromeOptions chromeOptions = new ChromeOptions();
+//	  chromeOptions.setHeadless(true);
+//	  driver = new ChromeDriver(chromeOptions);
+
 	  	
 	  FirefoxOptions firefoxOptions = new FirefoxOptions();
 	  firefoxOptions.setHeadless(true);
