@@ -25,30 +25,28 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 public class EditarelperfildeusuariologueadocasosincorrectosTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-//	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-//	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-//	  
-//	  ChromeOptions chromeOptions = new ChromeOptions();
-//	  chromeOptions.setHeadless(true);
-//	  driver = new ChromeDriver(chromeOptions);
+//    System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+//    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 
-	  	
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver(firefoxOptions);
-	  
-	
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.setHeadless(true);
+    driver = new FirefoxDriver(firefoxOptions);
+
+//    ChromeOptions chromeOptions = new ChromeOptions();
+//    chromeOptions.setHeadless(true);
+//    driver = new ChromeDriver(chromeOptions);
+
+//    driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_68,true);
+
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
-  }
+}
   @After
   public void tearDown() {
     driver.quit();
@@ -58,114 +56,29 @@ public class EditarelperfildeusuariologueadocasosincorrectosTest {
     driver.get("http://sepultura.northeurope.cloudapp.azure.com:1337/");
     driver.manage().window().setSize(new Dimension(1382, 744));
     driver.findElement(By.linkText("Log in")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("blackgaminglist@gmail.com");
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
+    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
     driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("Mangelrogel456");
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.cssSelector(".ajax-button")).click();
     try {
-        Thread.sleep(4000);
+        Thread.sleep(1000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.id("header-account-menu-link")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Settings")).click();
     driver.findElement(By.linkText("Edit profile")).click();
-    {
-      WebElement element = driver.findElement(By.id("full-name"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).clickAndHold().perform();
-      try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-    }
-    {
-      WebElement element = driver.findElement(By.id("full-name"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-      try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-    }
-    {
-      WebElement element = driver.findElement(By.id("full-name"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).release().perform();
-      try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-    }
-    driver.findElement(By.id("full-name")).click();
+    driver.findElement(By.id("email-address")).click();
+    driver.findElement(By.id("email-address")).sendKeys("blackgaminglist@gmail.comASSSSS\"@SS@");
+    driver.findElement(By.cssSelector(".ajax-button")).click();
     try {
         Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    driver.findElement(By.id("full-name")).sendKeys("asadsadsadsadsa");
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    driver.findElement(By.id("edit-profile")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    driver.findElement(By.cssSelector(".row:nth-child(2) > .col-sm-6:nth-child(1)")).click();
-    try {
-        Thread.sleep(4000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.linkText("Cancel")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("header-account-menu-link")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Sign out")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.cssSelector(".logo")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
   }
 }

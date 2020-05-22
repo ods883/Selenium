@@ -19,48 +19,45 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
 public class CambiodecontraseadeusuariologueadoCasocorrectoTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-//	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-//	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-//	  
-//	  ChromeOptions chromeOptions = new ChromeOptions();
-//	  chromeOptions.setHeadless(true);
-//	  driver = new ChromeDriver(chromeOptions);
-	  	
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver(firefoxOptions);
-	  
-	
+//    System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+//    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.setHeadless(true);
+    driver = new FirefoxDriver(firefoxOptions);
+
+//    ChromeOptions chromeOptions = new ChromeOptions();
+//    chromeOptions.setHeadless(true);
+//    driver = new ChromeDriver(chromeOptions);
+
+//    driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_68,true);
+
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
-  }
+}
   @After
   public void tearDown() {
     driver.quit();
   }
   @Test
   public void cambiodecontraseadeusuariologueadoCasocorrecto() {
-    driver.get("http://sepultura.northeurope.cloudapp.azure.com:1337/login");
+    driver.get("http://sepultura.northeurope.cloudapp.azure.com:1337/");
     driver.manage().window().setSize(new Dimension(1382, 744));
+    driver.findElement(By.linkText("Log in")).click();
     driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("blackgaminglist@gmail.com");
+    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
     driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("Mangelrogel456");
     driver.findElement(By.cssSelector(".ajax-button")).click();
     try {
@@ -72,23 +69,16 @@ public class CambiodecontraseadeusuariologueadoCasocorrectoTest {
     driver.findElement(By.linkText("Settings")).click();
     driver.findElement(By.linkText("Change password")).click();
     driver.findElement(By.id("password")).sendKeys("Mangelrogel456");
-    driver.findElement(By.cssSelector(".row:nth-child(1) > .col-sm-6:nth-child(2) > .form-group")).click();
     driver.findElement(By.id("confirm-password")).click();
     driver.findElement(By.id("confirm-password")).sendKeys("Mangelrogel456");
     driver.findElement(By.cssSelector(".ajax-button")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector(".ajax-button"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();     
-    }
     try {
-        Thread.sleep(4000);
+        Thread.sleep(1000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-    
     driver.findElement(By.id("header-account-menu-link")).click();
-    driver.findElement(By.linkText("Sign out")).click(); 
-    driver.findElement(By.cssSelector(".navbar-brand")).click();
+    driver.findElement(By.linkText("Sign out")).click();
+    driver.findElement(By.cssSelector(".logo")).click();
   }
 }

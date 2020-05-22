@@ -25,30 +25,28 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-//	  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-//	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-//	  
-//	  ChromeOptions chromeOptions = new ChromeOptions();
-//	  chromeOptions.setHeadless(true);
-//	  driver = new ChromeDriver(chromeOptions);
+//    System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+//    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 
-	  	
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver(firefoxOptions);
-	  
-	
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.setHeadless(true);
+    driver = new FirefoxDriver(firefoxOptions);
+
+//    ChromeOptions chromeOptions = new ChromeOptions();
+//    chromeOptions.setHeadless(true);
+//    driver = new ChromeDriver(chromeOptions);
+
+//    driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_68,true);
+
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
-  }
+}
   @After
   public void tearDown() {
     driver.quit();
@@ -59,38 +57,28 @@ public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
     driver.manage().window().setSize(new Dimension(1382, 744));
     driver.findElement(By.linkText("Log in")).click();
     driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("blackgaminglist@gmail.com");
+    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
     driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("Mangelrogel456");
     driver.findElement(By.cssSelector(".ajax-button")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector(".ajax-button"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();      
-    }
     try {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
     driver.findElement(By.id("header-account-menu-link")).click();
     driver.findElement(By.linkText("Settings")).click();
     driver.findElement(By.linkText("Change password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).sendKeys("Mangelrogel456");
+    driver.findElement(By.id("password")).sendKeys("Mangorolo123");
     driver.findElement(By.id("confirm-password")).click();
-    driver.findElement(By.id("confirm-password")).sendKeys("Mangelrogel112");
-    driver.findElement(By.cssSelector(".button-text")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector(".button-text"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();      
-    }{
-      WebElement element = driver.findElement(By.tagName("body"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element, 0, 0).perform();     
-    }
+    driver.findElement(By.id("confirm-password")).sendKeys("Loladominguez123");
+    driver.findElement(By.cssSelector(".ajax-button")).click();
+    try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     driver.findElement(By.linkText("Cancel")).click();
-    driver.findElement(By.id("header-account-menu-link")).click();
     driver.findElement(By.linkText("Sign out")).click();
-    driver.findElement(By.cssSelector(".navbar-brand")).click();
+    driver.findElement(By.cssSelector(".logo")).click();
   }
 }
