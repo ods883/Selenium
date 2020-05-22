@@ -58,115 +58,39 @@ public class CambiodecontraseadeusuariologueadoCasosincorrectosTest {
     driver.get("http://sepultura.northeurope.cloudapp.azure.com:1337/");
     driver.manage().window().setSize(new Dimension(1382, 744));
     driver.findElement(By.linkText("Log in")).click();
+    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("blackgaminglist@gmail.com");
+    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("Mangelrogel456");
+    driver.findElement(By.cssSelector(".ajax-button")).click();
+    {
+      WebElement element = driver.findElement(By.cssSelector(".ajax-button"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();      
+    }
     try {
         Thread.sleep(2000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("blackgaminglist@gmail.com");
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("Mangelrogel456");
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    driver.findElement(By.cssSelector(".ajax-button")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector(".ajax-button"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-      try {
-          Thread.sleep(2000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-    }
     driver.findElement(By.id("header-account-menu-link")).click();
     driver.findElement(By.linkText("Settings")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Change password")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("password")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("password")).sendKeys("Mangelrogel456");
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("confirm-password")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("confirm-password")).sendKeys("Mangelrogel112");
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.cssSelector(".button-text")).click();
     {
       WebElement element = driver.findElement(By.cssSelector(".button-text"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-      try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-    }
-    {
+      builder.moveToElement(element).perform();      
+    }{
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element, 0, 0).perform();
-      try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+      builder.moveToElement(element, 0, 0).perform();     
     }
     driver.findElement(By.linkText("Cancel")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("header-account-menu-link")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Sign out")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.cssSelector(".navbar-brand")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
   }
 }

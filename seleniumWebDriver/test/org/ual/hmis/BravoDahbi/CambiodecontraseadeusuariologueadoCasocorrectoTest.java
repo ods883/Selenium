@@ -69,41 +69,26 @@ public class CambiodecontraseadeusuariologueadoCasocorrectoTest {
         e.printStackTrace();
       }
     driver.findElement(By.id("header-account-menu-link")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Settings")).click();
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.linkText("Change password")).click();
     driver.findElement(By.id("password")).sendKeys("Mangelrogel456");
     driver.findElement(By.cssSelector(".row:nth-child(1) > .col-sm-6:nth-child(2) > .form-group")).click();
-    try {
-        Thread.sleep(4000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
     driver.findElement(By.id("confirm-password")).click();
     driver.findElement(By.id("confirm-password")).sendKeys("Mangelrogel456");
     driver.findElement(By.cssSelector(".ajax-button")).click();
     {
       WebElement element = driver.findElement(By.cssSelector(".ajax-button"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-      try {
-          Thread.sleep(4000);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
+      builder.moveToElement(element).perform();     
     }
+    try {
+        Thread.sleep(4000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     
     driver.findElement(By.id("header-account-menu-link")).click();
     driver.findElement(By.linkText("Sign out")).click(); 
     driver.findElement(By.cssSelector(".navbar-brand")).click();
-}
+  }
 }
